@@ -1,20 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import RootNavigator from './src/navigation/RootNavigator';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <RootNavigator />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+/**
+ * Images used
+ */
+// Image by sentavio on Freepik - https://www.freepik.com/free-vector/green-eco-logo-icon_8832645.htm#query=logo%20medical&position=1&from_view=search&track=sph
+// Image by storyset on Freepik - https://www.freepik.com/free-vector/online-doctor-concept-illustration_7709344.htm#page=2&query=illustrations%20medical&position=0&from_view=search&track=sph
