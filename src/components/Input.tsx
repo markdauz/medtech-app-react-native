@@ -14,10 +14,19 @@ type Input = {
     | 'url';
   onInputValue: (value: any) => void;
   secureTextEntry?: boolean;
+  contentInset?: {
+    top?: number;
+    label?: number;
+    input?: number;
+    left?: number;
+    right?: number;
+    bottom?: number;
+  };
 };
 
 function Input(props: Input) {
-  const { label, keyboardType, onInputValue, secureTextEntry } = props;
+  const { label, keyboardType, onInputValue, secureTextEntry, contentInset } =
+    props;
 
   return (
     <View>
@@ -28,6 +37,7 @@ function Input(props: Input) {
         onChangeText={(value: any) => {
           onInputValue(value);
         }}
+        contentInset={contentInset}
       />
     </View>
   );

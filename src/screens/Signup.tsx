@@ -12,6 +12,7 @@ type SignupScreenProp = NativeStackNavigationProp<RootStackParamList, 'Signup'>;
 
 function Signup() {
   const navigation = useNavigation<SignupScreenProp>();
+
   const [name, setName] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +29,7 @@ function Signup() {
       <View style={styles.container}>
         <View>
           <Pressable
-            style={{ alignSelf: 'flex-start', marginTop: 30 }}
+            style={styles.backArrow}
             onPress={() => navigation.goBack()}
           >
             <Feather name="arrow-left" size={24} color="black" />
@@ -67,20 +68,14 @@ function Signup() {
             <Pressable onPress={() => setSecure(!secure)}>
               <Feather
                 name={secure ? 'eye-off' : 'eye'}
-                size={24}
+                size={16}
                 color="black"
-                style={{
-                  opacity: 0.45,
-                  position: 'absolute',
-                  right: 0,
-                  bottom: 20,
-                }}
+                style={styles.icon}
               />
             </Pressable>
           </View>
           <View style={styles.buttonSpacing}>
             <Button
-              style={styles.spacing}
               label="Create Account"
               color="#fff"
               backgroundColor="rgb(46, 192, 165)"
@@ -103,6 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  backArrow: { alignSelf: 'flex-start', marginTop: 30, marginLeft: -5 },
   textWrapper: {
     alignSelf: 'flex-start',
     marginTop: 16,
@@ -114,8 +110,13 @@ const styles = StyleSheet.create({
     color: '#090F47',
     textAlign: 'left',
   },
-  spacing: { marginBottom: 18 },
-  buttonSpacing: { marginTop: 24 },
+  icon: {
+    opacity: 0.45,
+    position: 'absolute',
+    right: 0,
+    bottom: 20,
+  },
+  buttonSpacing: { marginTop: 24, marginBottom: 18 },
   subText: {
     fontSize: 14,
     lineHeight: 14,
