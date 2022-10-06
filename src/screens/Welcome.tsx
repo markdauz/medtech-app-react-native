@@ -1,10 +1,19 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Button from '../components/Button';
+import { RootStackParamList } from '../navigation/types';
 
 type Welcome = {};
 
+type WelcomeScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Welcome'
+>;
+
 function Welcome(props: Welcome) {
+  const navigation = useNavigation<WelcomeScreenProp>();
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -27,11 +36,13 @@ function Welcome(props: Welcome) {
           label="Sign up with Phone Number"
           color="#fff"
           backgroundColor="rgb(46, 192, 165)"
+          onPress={() => navigation.navigate('Signup')}
         />
         <Button
           label="Login with Phone Number"
           color="rgb(46, 192, 165)"
           backgroundColor="#fff"
+          onPress={() => navigation.navigate('Login')}
         />
       </View>
     </SafeAreaView>

@@ -6,12 +6,16 @@ type Button = {
   label: string;
   backgroundColor: string;
   color: string;
+  onPress: any;
 };
 
 function Button(props: Button) {
-  const { label, color, backgroundColor, style } = props;
+  const { label, color, backgroundColor, style, onPress } = props;
   return (
-    <Pressable style={[styles.container, style, { backgroundColor }]}>
+    <Pressable
+      style={[styles.container, style, { backgroundColor }]}
+      onPress={onPress}
+    >
       <Text style={[styles.label, { color }]}>{label}</Text>
     </Pressable>
   );
@@ -20,7 +24,7 @@ const styles = StyleSheet.create({
   container: {
     elevation: 1,
     height: 50,
-    width: 311,
+    minWidth: 311,
     borderRadius: 56,
     alignItems: 'center',
     justifyContent: 'center',
