@@ -4,6 +4,8 @@ import Welcome from '../../screens/Welcome';
 import Login from '../../screens/Login';
 import { RootStackParamList } from '../types';
 import Signup from '../../screens/Signup';
+import Success from '../../screens/Success';
+import Verification from '../../screens/Verification';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -29,6 +31,16 @@ export default function Auth() {
       <Stack.Screen
         name="Signup"
         component={Signup}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Verification"
+        component={Verification}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Success"
+        component={Success}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

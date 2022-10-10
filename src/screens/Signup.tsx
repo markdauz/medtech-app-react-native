@@ -22,6 +22,7 @@ function Signup() {
   const onSubmit = () => {
     const data = { name, mobileNumber, email, password };
     console.log(data);
+    navigation.navigate('Verification');
   };
 
   return (
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
+    paddingHorizontal: 32,
   },
   backArrow: { alignSelf: 'flex-start', marginTop: 30, marginLeft: -5 },
   textWrapper: {

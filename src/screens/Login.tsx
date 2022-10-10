@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
+    paddingHorizontal: 32,
   },
   backArrow: { alignSelf: 'flex-start', marginTop: 30, marginLeft: -5 },
   icon: { position: 'absolute', left: 0, bottom: 20 },
